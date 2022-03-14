@@ -1,12 +1,15 @@
 #include <iostream>
 #include <filesystem>
 #include <fstream>
+#include <boost/regex.hpp>
+
+static const boost::regex delim_regex(".*\\/\\/\\s*!CPP_CLEAN!");
 
 int main(int argc, char* argv[])
 {
     if (argc != 2U)
     {
-        std::cerr << "Error: no input file specified";
+        std::cerr << "Error: no input file specified\n";
         return 0U;
     }
 
@@ -14,15 +17,23 @@ int main(int argc, char* argv[])
     std::ifstream inputFile(argv[1]);
     if (!inputFile.is_open())
     {
-        std::cerr << "Couldn't open file " << argv[1];
+        std::cerr << "Couldn't open file " << argv[1] << '\n';
         return 0U;
     }
 
-    // check if its a valid file extension...
-
-    // parse the file...
-
-    // close input file...
+    // parsing the file
+    std::string temp;
+    while (std::getline(inputFile, temp))
+    {
+        if (boost::regex_match(temp, delim_regex))
+        {
+            std::cout << "found a match\n";
+        }
+        else
+        {
+            std::cout << temp << "\n";
+        }
+    }    
     inputFile.close();
 
     // delete input file...
