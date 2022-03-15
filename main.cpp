@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
     std::rename("temp.txt", argv[1]);
 
     // writing to stdout
-    std::cout << "CPP_CLEANER\n"
+    std::cout << "Debug Cleaner\n"
             << "Ran on " << argv[1] << '\n'
             << "Removed " << std::to_string(lines_removed) << " lines\n";
     return 0U;
