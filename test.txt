@@ -3,7 +3,7 @@
 #include <fstream>
 #include <boost/regex.hpp>
 
-static const std::string delim_regex = ".*\\/\\/\\s*!CPP_CLEAN!";
+static const boost::regex delim_regex(".*\\/\\/\\s*!CPP_CLEAN!");
 
 int main(int argc, char* argv[])
 {
@@ -15,38 +15,38 @@ int main(int argc, char* argv[])
 
     // opening the listed file
     std::ifstream inputFile(argv[1]);
+    std::ofstream outputFile("temp.txt");
+
     if (!inputFile.is_open())
     {
         std::cerr << "Couldn't open file " << argv[1] << '\n';
+
+        return 0U;
+    }
+    if (!outputFile.is_open())
+    {
+        std::cerr << "Couldn't open file temp.txt";
         return 0U;
     }
 
-    // check if its a valid file extension...
-
-
-    boost::regex regex(delim_regex);
+    // parsing the file
     std::string temp;
-    while (std::getline(inputFile, temp, '\n'))
+    while (std::getline(inputFile, temp))
     {
-        if (boost::regex_match(temp, regex))
+        if (!boost::regex_match(temp, delim_regex))
         {
-            std::cout << "found a match\n";
-        }
-        else
-        {
-            std::cout << temp << "\n";
+            outputFile << temp << '\n';
         }
     }
-    // parse the file...    // !CPP_CLEAN!
-    
-
-    // close input file...
     inputFile.close();
+    outputFile.close();
 
-    // delete input file... //  !CPP_CLEAN!
-     
-    // open input file as new output file...
+    // delete input file...
+    if (std::remove(argv[1]))
+    {
+        std::cerr << "Couldn't delete file " << argv[1] << '\n';
+    }
 
-    // write to output file
+
     return 0U;
 }
