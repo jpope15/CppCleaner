@@ -3,7 +3,7 @@
 #include <fstream>
 #include <boost/regex.hpp>
 
-static const boost::regex delim_regex(".*\\/\\/\\s*!CPP_CLEAN!");
+static const boost::regex delim_regex(".*\\/\\/\\s*!DEBUG_REMOVE!");
 
 int main(int argc, char* argv[])
 {
@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 
     if (!inputFile.is_open())
     {
-        std::cerr << "Couldn't open file " << argv[1] << '\n';
+        std::cerr << "Couldn't open file " << argv[1] << "\nCheck your spelling and try again\n";
 
         return 0U;
     }

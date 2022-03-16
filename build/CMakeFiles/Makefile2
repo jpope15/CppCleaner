@@ -54,16 +54,16 @@ RM = /usr/local/Cellar/cmake/3.22.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/jamespope/cppcleaner
+CMAKE_SOURCE_DIR = /Users/jamespope/DebugCleaner
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/jamespope/cppcleaner/build
+CMAKE_BINARY_DIR = /Users/jamespope/DebugCleaner/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/CppCleaner.dir/all
+all: CMakeFiles/DebugCleaner.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/CppCleaner.dir/clean
+clean: CMakeFiles/DebugCleaner.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/CppCleaner.dir
+# Target rules for target CMakeFiles/DebugCleaner.dir
 
 # All Build rule for target.
-CMakeFiles/CppCleaner.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CppCleaner.dir/build.make CMakeFiles/CppCleaner.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CppCleaner.dir/build.make CMakeFiles/CppCleaner.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/jamespope/cppcleaner/build/CMakeFiles --progress-num=1,2 "Built target CppCleaner"
-.PHONY : CMakeFiles/CppCleaner.dir/all
+CMakeFiles/DebugCleaner.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DebugCleaner.dir/build.make CMakeFiles/DebugCleaner.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DebugCleaner.dir/build.make CMakeFiles/DebugCleaner.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/jamespope/DebugCleaner/build/CMakeFiles --progress-num=1,2 "Built target DebugCleaner"
+.PHONY : CMakeFiles/DebugCleaner.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/CppCleaner.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jamespope/cppcleaner/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CppCleaner.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jamespope/cppcleaner/build/CMakeFiles 0
-.PHONY : CMakeFiles/CppCleaner.dir/rule
+CMakeFiles/DebugCleaner.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jamespope/DebugCleaner/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/DebugCleaner.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jamespope/DebugCleaner/build/CMakeFiles 0
+.PHONY : CMakeFiles/DebugCleaner.dir/rule
 
 # Convenience name for target.
-CppCleaner: CMakeFiles/CppCleaner.dir/rule
-.PHONY : CppCleaner
+DebugCleaner: CMakeFiles/DebugCleaner.dir/rule
+.PHONY : DebugCleaner
 
 # clean rule for target.
-CMakeFiles/CppCleaner.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CppCleaner.dir/build.make CMakeFiles/CppCleaner.dir/clean
-.PHONY : CMakeFiles/CppCleaner.dir/clean
+CMakeFiles/DebugCleaner.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DebugCleaner.dir/build.make CMakeFiles/DebugCleaner.dir/clean
+.PHONY : CMakeFiles/DebugCleaner.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

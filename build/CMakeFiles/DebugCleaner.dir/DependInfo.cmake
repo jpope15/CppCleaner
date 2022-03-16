@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/jamespope/cppcleaner/main.cpp" "CMakeFiles/CppCleaner.dir/main.cpp.o" "gcc" "CMakeFiles/CppCleaner.dir/main.cpp.o.d"
+  "/Users/jamespope/DebugCleaner/main.cpp" "CMakeFiles/DebugCleaner.dir/main.cpp.o" "gcc" "CMakeFiles/DebugCleaner.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.

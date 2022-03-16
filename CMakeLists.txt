@@ -1,4 +1,4 @@
-PROJECT(CppCleaner)
+PROJECT(DebugCleaner)
 cmake_minimum_required(VERSION 3.22)
 set (CMAKE_CXX_STANDARD 17)
 
@@ -9,7 +9,7 @@ SET(cpp_SRCS main.cpp)
 find_package(Boost 1.78.0 COMPONENTS regex REQUIRED)
 
 #linking .cpp to executable
-ADD_EXECUTABLE(CppCleaner ${cpp_SRCS})
+ADD_EXECUTABLE(DebugCleaner ${cpp_SRCS})
 
 #linking libraries
-target_link_libraries(CppCleaner Boost::regex)
+target_link_libraries(DebugCleaner Boost::regex)

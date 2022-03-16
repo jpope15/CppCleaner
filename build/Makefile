@@ -57,10 +57,10 @@ RM = /usr/local/Cellar/cmake/3.22.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/jamespope/cppcleaner
+CMAKE_SOURCE_DIR = /Users/jamespope/DebugCleaner
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/jamespope/cppcleaner/build
+CMAKE_BINARY_DIR = /Users/jamespope/DebugCleaner/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jamespope/cppcleaner/build/CMakeFiles /Users/jamespope/cppcleaner/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jamespope/DebugCleaner/build/CMakeFiles /Users/jamespope/DebugCleaner/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jamespope/cppcleaner/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/jamespope/DebugCleaner/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named CppCleaner
+# Target rules for targets named DebugCleaner
 
 # Build rule for target.
-CppCleaner: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CppCleaner
-.PHONY : CppCleaner
+DebugCleaner: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DebugCleaner
+.PHONY : DebugCleaner
 
 # fast build rule for target.
-CppCleaner/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CppCleaner.dir/build.make CMakeFiles/CppCleaner.dir/build
-.PHONY : CppCleaner/fast
+DebugCleaner/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DebugCleaner.dir/build.make CMakeFiles/DebugCleaner.dir/build
+.PHONY : DebugCleaner/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CppCleaner.dir/build.make CMakeFiles/CppCleaner.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DebugCleaner.dir/build.make CMakeFiles/DebugCleaner.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -142,7 +142,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CppCleaner.dir/build.make CMakeFiles/CppCleaner.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DebugCleaner.dir/build.make CMakeFiles/DebugCleaner.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,7 +150,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CppCleaner.dir/build.make CMakeFiles/CppCleaner.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DebugCleaner.dir/build.make CMakeFiles/DebugCleaner.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -161,7 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... CppCleaner"
+	@echo "... DebugCleaner"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

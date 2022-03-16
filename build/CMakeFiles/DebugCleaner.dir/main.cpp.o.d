@@ -1,5 +1,5 @@
-CMakeFiles/CppCleaner.dir/main.cpp.o: \
-  /Users/jamespope/cppcleaner/main.cpp \
+CMakeFiles/DebugCleaner.dir/main.cpp.o: \
+  /Users/jamespope/DebugCleaner/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/pthread.h \
