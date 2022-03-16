@@ -3,7 +3,7 @@
 #include <fstream>
 #include <boost/regex.hpp>
 
-static const boost::regex delim_regex(".*\\/\\/\\s*!DEBUG_REMOVE!");
+static const boost::regex delim_regex(".*DEBUG_REMOVE.*");
 
 int main(int argc, char* argv[])
 {
