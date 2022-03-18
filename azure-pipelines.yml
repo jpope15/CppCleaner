@@ -10,10 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    cd build
-    cmake .. && make
-  displayName: 'Run a multi-line script'
+- task: CMake@1
+  inputs:
+    cmakeArgs: '..'
