@@ -1,6 +1,7 @@
 #include <iostream>
 #include <filesystem>
 #include <fstream>
+#include <queue>
 #include <boost/regex.hpp>
 
 const boost::regex single_line_regex(".*\\/\\/.*DEBUG_REMOVE.*");
@@ -9,8 +10,9 @@ const boost::regex block_comment_end_regex(".*\\*\\/.*");
 
 bool is_single_line_comment(const std::string& line);
 bool is_block_comment_start(const std::string& line);
+bool is_block_comment_end(const std::string& line);
 
-void handle_block_comment(const std::string& line, std::ifstream& file);
+void handle_block_comment(std::string& line, std::ifstream& input_file, std::ofstream& output_file, int& lines_removed);
 
 int main(int argc, char* argv[])
 {
@@ -40,13 +42,13 @@ int main(int argc, char* argv[])
     int lines_removed = 0;
     while (std::getline(inputFile, temp))
     {
-        if (is_single_line_comment(temp))
-            lines_removed++;
-        else
-            outputFile << temp << '\n';
-
         if (is_block_comment_start(temp))
-            handle_block_comment(temp, inputFile);
+            handle_block_comment(temp, inputFile, outputFile, lines_removed);
+
+        if (!is_single_line_comment(temp))
+            outputFile << temp << '\n';        
+        else
+            lines_removed++;
     }
     inputFile.close();
     outputFile.close();
@@ -74,7 +76,33 @@ bool is_block_comment_start(const std::string& line)
     return boost::regex_match(line, block_comment_start_regex);
 }
 
-void handle_block_comment(const std::string& line, std::ifstream& file)
+bool is_block_comment_end(const std::string& line)
 {
-    std::cout << "\nfound block comment\n";
+    return boost::regex_match(line, block_comment_end_regex);
+}
+
+void handle_block_comment(std::string& line, std::ifstream& input_file, std::ofstream& output_file, int& lines_removed)
+{
+    std::streampos old_pos = input_file.tellg();
+    bool ok = false;
+    int pos_lines_removed = 0;
+    do
+    {
+        pos_lines_removed++;
+        if (is_block_comment_end(line))
+        {
+            ok = true;
+            break;
+        }
+    } while (std::getline(input_file, line));
+
+    if (ok)
+    { 
+        lines_removed += pos_lines_removed;
+        std::getline(input_file, line);         // advancing to the next line
+    }
+    else
+    {
+        input_file.seekg(old_pos);
+    }
 }
