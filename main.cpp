@@ -12,7 +12,7 @@ bool is_single_line_comment(const std::string& line);
 bool is_block_comment_start(const std::string& line);
 bool is_block_comment_end(const std::string& line);
 
-void handle_block_comment(std::string& line, std::ifstream& input_file, std::ofstream& output_file, int& lines_removed);
+void handle_block_comment(std::string& line, std::ifstream& input_file, int& lines_removed);
 
 int main(int argc, char* argv[])
 {
@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
     while (std::getline(inputFile, temp))
     {
         if (is_block_comment_start(temp))
-            handle_block_comment(temp, inputFile, outputFile, lines_removed);
+            handle_block_comment(temp, inputFile, lines_removed);
 
         if (!is_single_line_comment(temp))
             outputFile << temp << '\n';        
@@ -81,7 +81,7 @@ bool is_block_comment_end(const std::string& line)
     return boost::regex_match(line, block_comment_end_regex);
 }
 
-void handle_block_comment(std::string& line, std::ifstream& input_file, std::ofstream& output_file, int& lines_removed)
+void handle_block_comment(std::string& line, std::ifstream& input_file, int& lines_removed)
 {
     std::streampos old_pos = input_file.tellg();
     bool ok = false;
